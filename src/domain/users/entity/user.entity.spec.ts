@@ -1,4 +1,4 @@
-import { User } from "./user";
+import { User } from "./user.entity";
 
 describe("Users unit test", () => {
   it("should throw error when name is empty", () => {
