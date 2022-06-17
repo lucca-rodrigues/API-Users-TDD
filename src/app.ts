@@ -1,23 +1,13 @@
 import express from "express";
-import routes from "./routes";
+import { appRoutes } from "./infra/http/routes";
 
-class App {
-  public server;
+const app = express();
 
-  constructor() {
-    this.server = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-    this.middlewares();
-    this.routes();
-  }
+app.use(appRoutes);
 
-  middlewares() {
-    this.server.use(express.json());
-  }
-
-  routes() {
-    this.server.use(routes);
-  }
-}
-
-export default new App().server;
+app.listen(3333, () => {
+  console.log("🚀 Server started on port 3333!");
+});

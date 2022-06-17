@@ -1,0 +1,1 @@
+Apply concepts DDD and using referency SOLID API: https://github.dev/hereisjohnny2/rentalx
